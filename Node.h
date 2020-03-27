@@ -1,10 +1,9 @@
 template <class T>
 class Node
 {
+public:
     T value;
     Node* next;
-
-public:
     Node(T _value)
     {
         value = _value;
