@@ -12,10 +12,9 @@ public:
 
     void push_back(T _value)
     {
-        auto newNode = new Node<T>(_value);
-        elements.back().next = newNode;
-        elements.push_back(*newNode);
-        delete newNode;
+        Node<T> newNode(_value);
+        elements.back().next = &newNode;
+        elements.push_back(newNode);
     }
 
     void print()
