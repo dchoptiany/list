@@ -10,9 +10,9 @@ int main()
         newList.push_back(i);
     }
 
-    std::cout << "Size of lista: " << newList.size() << std::endl;
+    std::cout << "Size of newList: " << newList.size() << std::endl;
 
-    std::cout << "lista.print():" << std::endl;
+    std::cout << "newList.print():" << std::endl;
     newList.print();
 
     return 0;

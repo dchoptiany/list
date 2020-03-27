@@ -9,19 +9,23 @@ class List
 
 public:
     List() = default;
+
     void push_back(T _value)
     {
-        auto newNode = Node<T>(_value);
-        elements.back().next = &newNode;
-        elements.push_back(newNode);
+        auto newNode = new Node<T>(_value);
+        elements.back().next = newNode;
+        elements.push_back(*newNode);
+        delete newNode;
     }
+
     void print()
     {
-        for(auto element : elements)
+        for(const auto& element : elements)
         {
             std::cout << element.value << std::endl;
         }
     }
+
     unsigned int size()
     {
         return elements.size();
