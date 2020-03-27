@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 #include "Node.h"
 
 template <class T>
@@ -13,5 +14,12 @@ public:
         auto newNode = Node<T>(_value);
         elements.back().next = &newNode;
         elements.push_back(newNode);
+    }
+    void print()
+    {
+        for(auto element : elements)
+        {
+            std::cout << element.value << std::endl;
+        }
     }
 };
