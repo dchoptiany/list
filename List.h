@@ -22,4 +22,8 @@ public:
             std::cout << element.value << std::endl;
         }
     }
+    unsigned int size()
+    {
+        return elements.size();
+    }
 };
