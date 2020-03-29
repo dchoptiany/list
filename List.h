@@ -5,28 +5,60 @@
 template <class T>
 class List
 {
-    std::vector<Node<T>> elements;
-
 public:
-    List() = default;
+    Node<T>* first;
+
+    List()
+    {
+        first = nullptr;
+    }
 
     void push_back(T _value)
     {
         Node<T> newNode(_value);
-        elements.back().next = &newNode;
-        elements.push_back(newNode);
+
+        Node<T>* current = first;
+
+        while(current -> next != nullptr)
+        {
+            current = current -> next;
+        }
+
+        current -> next = &newNode;
     }
 
     void print()
     {
-        for(const auto& element : elements)
+        Node<T>* current = first;
+        std::string result;
+
+        while(current != nullptr)
         {
-            std::cout << element.value << std::endl;
+            result += current->value;
+
+            if(current->next != nullptr)
+            {
+                result += ", ";
+            }
+
+            current = current->next;
         }
+
+        std::cout << result;
     }
 
     unsigned int size()
     {
-        return elements.size();
+        unsigned int counter = 0;
+
+        Node<T>* current = first;
+
+        while(current != nullptr)
+        {
+            ++counter;
+            current = current -> next;
+        }
+
+        return counter;
     }
 };
