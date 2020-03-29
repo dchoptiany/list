@@ -36,21 +36,12 @@ public:
     void print()
     {
         Node<T>* current = first;
-        std::string result;
 
         while(current != nullptr)
         {
-            result += current->value;
-
-            if(current->next != nullptr)
-            {
-                result += ", ";
-            }
-
-            current = current->next;
+            std::cout << current -> value << " ";
+            current = current -> next;
         }
-
-        std::cout << result;
     }
 
     unsigned int size()
