@@ -15,7 +15,13 @@ public:
 
     void push_back(T _value)
     {
-        Node<T> newNode(_value);
+        Node<T>* newNode = new Node<T>(_value);
+
+        if(first == nullptr)
+        {
+            first = newNode;
+            return;
+        }
 
         Node<T>* current = first;
 
@@ -24,7 +30,7 @@ public:
             current = current -> next;
         }
 
-        current -> next = &newNode;
+        current -> next = newNode;
     }
 
     void print()
