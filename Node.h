@@ -5,8 +5,7 @@ class Node
 {
 public:
     T value;
-    //Node<T>* next;
-    std::unique_ptr<Node<T>> next;
+    std::shared_ptr<Node<T>> next;
 
     Node(T _value)
     {

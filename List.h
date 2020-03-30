@@ -5,8 +5,7 @@ template <class T>
 class List
 {
 public:
-    //Node<T>* first;
-    std::unique_ptr<Node<T>> first;
+    std::shared_ptr<Node<T>> first;
 
     List()
     {
@@ -15,8 +14,7 @@ public:
 
     void push_back(T _value)
     {
-        //Node<T>* newNode = new Node<T>(_value);
-        std::unique_ptr<Node<T>> newNode = new Node<T>(_value);
+        std::shared_ptr<Node<T>> newNode = std::make_shared<Node<T>>(Node<T>(_value));
 
         if(first == nullptr)
         {
@@ -24,7 +22,7 @@ public:
             return;
         }
 
-        std::unique_ptr<Node<T>> current = first;
+        std::shared_ptr<Node<T>> current = first;
 
         while(current -> next != nullptr)
         {
@@ -36,7 +34,7 @@ public:
 
     void print()
     {
-        std::unique_ptr<Node<T>> current = first;
+        std::shared_ptr<Node<T>> current = first;
 
         while(current != nullptr)
         {
@@ -49,7 +47,7 @@ public:
     {
         unsigned int counter = 0;
 
-        std::unique_ptr<Node<T>> current = first;
+        std::shared_ptr<Node<T>> current = first;
 
         while(current != nullptr)
         {
