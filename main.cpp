@@ -22,6 +22,11 @@ int main()
     std::cout << std::endl << "newIntList.print() after pop_front(): ";
     newIntList.print();
 
+    newIntList.pop_back();
+
+    std::cout << std::endl << "newIntList.print() after pop_back(): ";
+    newIntList.print();
+
     std::cout << std::endl << std::endl;
 
     List<std::string> newStringList;
@@ -42,5 +47,10 @@ int main()
     newStringList.pop_front();
 
     std::cout << std::endl << "newStringList.print() after pop_front(): ";
+    newStringList.print();
+
+    newStringList.pop_back();
+
+    std::cout << std::endl << "newStringList.print() after pop_back(): ";
     newStringList.print();
 }

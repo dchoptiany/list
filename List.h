@@ -61,6 +61,29 @@ public:
         first = second;
     }
 
+    void pop_back()
+    {
+        if(first == nullptr)
+        {
+            return;
+        }
+
+        if(first -> next == nullptr)
+        {
+            first == nullptr;
+            return;
+        }
+
+        std::shared_ptr<Node<T>> current = first;
+
+        while(current -> next -> next != nullptr)
+        {
+            current = current -> next;
+        }
+
+        current -> next = nullptr;
+    }
+
     void print()
     {
         std::shared_ptr<Node<T>> current = first;
