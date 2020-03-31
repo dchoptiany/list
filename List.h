@@ -12,6 +12,18 @@ public:
         first = nullptr;
     }
 
+    void push_front(T _value)
+    {
+	    std::shared_ptr<Node<T>> newNode = std::make_shared<Node<T>>(Node<T>(_value));
+
+  	    if(first != nullptr)
+        {
+  		    newNode -> next = first;
+        }
+
+  	    first = newNode;
+    }
+
     void push_back(T _value)
     {
         std::shared_ptr<Node<T>> newNode = std::make_shared<Node<T>>(Node<T>(_value));

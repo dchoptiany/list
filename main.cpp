@@ -10,6 +10,8 @@ int main()
         newIntList.push_back(i);
     }
 
+    newIntList.push_front(-1);
+
     std::cout << "Size of newIntList: " << newIntList.size() << std::endl;
 
     std::cout << "newList.print(): ";
@@ -24,6 +26,8 @@ int main()
     newStringList.push_back("three");
     newStringList.push_back("four");
     newStringList.push_back("five");
+
+    newStringList.push_front("zero");
 
     std::cout << "Size of newStringList: " << newStringList.size() << std::endl;
 
