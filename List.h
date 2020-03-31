@@ -44,6 +44,23 @@ public:
         current -> next = newNode;
     }
 
+    void pop_front()
+    {
+        if(first == nullptr)
+        {
+            return;
+        }
+
+        if(first -> next == nullptr)
+        {
+            first == nullptr;
+            return;
+        }
+
+        std::shared_ptr<Node<T>> second = first -> next;
+        first = second;
+    }
+
     void print()
     {
         std::shared_ptr<Node<T>> current = first;

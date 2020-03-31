@@ -14,7 +14,12 @@ int main()
 
     std::cout << "Size of newIntList: " << newIntList.size() << std::endl;
 
-    std::cout << "newList.print(): ";
+    std::cout << "newIntList.print(): ";
+    newIntList.print();
+
+    newIntList.pop_front();
+
+    std::cout << std::endl << "newIntList.print() after pop_front(): ";
     newIntList.print();
 
     std::cout << std::endl << std::endl;
@@ -32,5 +37,10 @@ int main()
     std::cout << "Size of newStringList: " << newStringList.size() << std::endl;
 
     std::cout << "newStringList.print(): ";
+    newStringList.print();
+
+    newStringList.pop_front();
+
+    std::cout << std::endl << "newStringList.print() after pop_front(): ";
     newStringList.print();
 }
