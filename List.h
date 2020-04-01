@@ -109,4 +109,9 @@ public:
 
         return counter;
     }
+
+    bool empty()
+    {
+        return first == nullptr;
+    }
 };

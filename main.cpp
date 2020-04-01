@@ -14,6 +14,8 @@ int main()
 
     std::cout << "Size of newIntList: " << newIntList.size() << std::endl;
 
+    std::cout << "newIntList.empty(): " << newIntList.empty()  << std::endl;
+
     std::cout << "newIntList.print(): ";
     newIntList.print();
 
@@ -41,6 +43,8 @@ int main()
 
     std::cout << "Size of newStringList: " << newStringList.size() << std::endl;
 
+    std::cout << "newStringList.empty(): " << newStringList.empty() << std::endl;
+
     std::cout << "newStringList.print(): ";
     newStringList.print();
 
@@ -53,4 +57,10 @@ int main()
 
     std::cout << std::endl << "newStringList.print() after pop_back(): ";
     newStringList.print();
+
+    std::cout << std::endl << std::endl;
+
+    List<double> emptyDoubleList;
+
+    std::cout << "emptyDoubleList.empty(): " << emptyDoubleList.empty() << std::endl;
 }

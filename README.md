@@ -8,4 +8,5 @@
 <li>pop_back - deletes last element of the list</li>
 <li>print - prints all list's elements</li>
 <li>size - returns size of the list</li>
+<li>empty - returns true if size is empty and false otherwise</li>
 </ul>
