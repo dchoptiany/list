@@ -29,6 +29,10 @@ int main()
     std::cout << std::endl << "newIntList.print() after pop_back(): ";
     newIntList.print();
 
+    std::cout << std::endl << "newIntList.min(): " << newIntList.min();
+
+    std::cout << std::endl << "newIntList.max(): " << newIntList.max();
+
     std::cout << std::endl << std::endl;
 
     List<std::string> newStringList;

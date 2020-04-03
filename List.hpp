@@ -114,4 +114,48 @@ public:
     {
         return first == nullptr;
     }
+
+    T min()
+    {
+        if(!empty())
+        {
+            std::shared_ptr<Node<T>> current = first;
+            T minimum = current -> value;
+
+            while(current != nullptr)
+            {
+                if(current -> value < minimum)
+                {
+                    minimum = current -> value;
+                }
+
+                current = current -> next;
+            }
+
+            return minimum;
+        }
+        return 0;
+    }
+
+    T max()
+    {
+        if(!empty())
+        {
+            std::shared_ptr<Node<T>> current = first;
+            T maximum = current -> value;
+
+            while(current != nullptr)
+            {
+                if(current -> value > maximum)
+                {
+                    maximum = current -> value;
+                }
+
+                current = current -> next;
+            }
+
+            return maximum;
+        }
+        return 0;
+    }
 };
