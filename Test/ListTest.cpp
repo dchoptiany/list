@@ -32,3 +32,16 @@ TEST(ListTest, UnsignedListSizeShouldEqual3)
     unsignedList.push_back(3);
     ASSERT_EQ(3, unsignedList.size());
 }
+
+TEST(ListTest, IntListEmptyShouldEqualTrue)
+{
+    List<int> intList;
+    ASSERT_TRUE(intList.empty());
+}
+
+TEST(ListTest, IntListEmptyShouldEqualFalse)
+{
+    List<int> intList;
+    intList.push_back(0);
+    ASSERT_FALSE(intList.empty());
+}
