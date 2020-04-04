@@ -13,7 +13,7 @@ include(External_GTest.cmake)
 # SRC
 include_directories(Include)
 include_directories(Test)
-add_executable(List "main.cpp" "Test/ListTest.cpp")
+add_executable(List "main.cpp")
 set(TEST_BINARY_FILES $<TARGET_OBJECTS:source_objects_lib>
         ${TEST_FILES}
         ${MAIN_TEST})
