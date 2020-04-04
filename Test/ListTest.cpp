@@ -45,3 +45,23 @@ TEST(ListTest, IntListEmptyShouldEqualFalse)
     intList.push_back(0);
     ASSERT_FALSE(intList.empty());
 }
+
+TEST(ListTest, IntListMinShouldEqual0)
+{
+    List<int> intList;
+    intList.push_back(0);
+    intList.push_back(1);
+    intList.push_back(2);
+    intList.push_back(3);
+    ASSERT_EQ(0, intList.min());
+}
+
+TEST(ListTest, DoubleListMinShouldEqualNegative5)
+{
+    List<double> doubleList;
+    doubleList.push_back(2.5);
+    doubleList.push_back(1.75);
+    doubleList.push_back(-5.0);
+    doubleList.push_back(12.32);
+    ASSERT_EQ(-5.0, doubleList.min());
+}
