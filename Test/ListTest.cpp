@@ -65,3 +65,23 @@ TEST(ListTest, DoubleListMinShouldEqualNegative5)
     doubleList.push_back(12.32);
     ASSERT_EQ(-5.0, doubleList.min());
 }
+
+TEST(ListTest, IntListMaxShouldEqual3)
+{
+    List<int> intList;
+    intList.push_back(0);
+    intList.push_back(1);
+    intList.push_back(2);
+    intList.push_back(3);
+    ASSERT_EQ(3, intList.max());
+}
+
+TEST(ListTest, DoubleListMinShouldEqualNegative10)
+{
+    List<double> doubleList;
+    doubleList.push_back(-10.0);
+    doubleList.push_back(-17.5);
+    doubleList.push_back(-50.0);
+    doubleList.push_back(-123.2);
+    ASSERT_EQ(-10.0, doubleList.max());
+}
