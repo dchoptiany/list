@@ -10,7 +10,7 @@ int main()
     newList.pop_back();
     newList.print();
 
-    std::cout << "newList size: " << newList.size() << std::endl;
+    std::cout << std::endl << "newList size: " << newList.size() << std::endl;
     std::cout << "newList empty: " << newList.empty() << std::endl;
     std::cout << "newList min: " << newList.min() << std::endl;
     std::cout << "newList max: " << newList.max() << std::endl;
