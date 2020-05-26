@@ -158,4 +158,12 @@ public:
         }
         return 0;
     }
+
+    void clear()
+    {
+        if(!empty())
+        {
+            first = nullptr;
+        }
+    }
 };
