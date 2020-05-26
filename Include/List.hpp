@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Node.hpp"
 
-template <class T, class ...Tpack>
+template <class T>
 class List
 {
 public:
