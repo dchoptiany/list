@@ -14,12 +14,12 @@ public:
 
     List(const std::initializer_list<T>& args)
     {
-        first = std::make_shared<Node<T>>(Node<T>(args[0]));
+        first = std::make_shared<Node<T>>(Node<T>(*args.begin()));
         auto current = first;
 
-        for(int i = 1; i < args.size(); i++)
+        for(auto it = args.begin() + 1; it != args.end(); ++it)
         {
-            current -> next = std::make_shared<Node<T>>(Node<T>(args[i]));
+            current -> next = std::make_shared<Node<T>>(Node<T>(*it));
             current = current -> next;
         }
     }
