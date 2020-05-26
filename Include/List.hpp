@@ -107,9 +107,9 @@ public:
         }
     }
 
-    unsigned int size()
+    size_t size()
     {
-        unsigned int counter = 0;
+        size_t counter = 0;
 
         std::shared_ptr<Node<T>> current = first;
 
