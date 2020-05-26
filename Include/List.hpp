@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Node.hpp"
 
-template <class T>
+template <class T, class ...Tpack>
 class List
 {
 public:
@@ -10,6 +10,18 @@ public:
     List()
     {
         first = nullptr;
+    }
+
+    List(const std::initializer_list<T>& args)
+    {
+        first = std::make_shared<Node<T>>(Node<T>(args[0]));
+        auto current = first;
+
+        for(int i = 1; i < args.size(); i++)
+        {
+            current -> next = std::make_shared<Node<T>>(Node<T>(args[i]));
+            current = current -> next;
+        }
     }
 
     void push_front(T _value)
