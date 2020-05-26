@@ -85,3 +85,37 @@ TEST(ListTest, DoubleListMinShouldEqualNegative10)
     doubleList.push_back(-123.2);
     ASSERT_EQ(-10.0, doubleList.max());
 }
+
+TEST(ListTest, IntClearList1Value)
+{
+    List<int> intList;
+    intList.push_back(10);
+    intList.clear();
+    ASSERT_TRUE(intList.empty());
+}
+
+TEST(ListTest, IntClearList2Value)
+{
+    List<int> intList;
+    intList.push_back(1);
+    intList.push_back(2);
+    intList.clear();
+    ASSERT_TRUE(intList.empty());
+}
+
+TEST(ListTest, IntClearList10Value)
+{
+    List<int> intList;
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.push_back(10);
+    intList.clear();
+    ASSERT_TRUE(intList.empty());
+}
