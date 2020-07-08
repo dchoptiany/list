@@ -1,4 +1,6 @@
 #include <iostream>
+#include <optional>
+#include <stdexcept>
 #include "Node.hpp"
 
 template <class T>
@@ -177,5 +179,24 @@ public:
         {
             first = nullptr;
         }
+    }
+
+    std::optional<T> at(const size_t pos)
+    {
+        if(pos >= size())
+        {
+            throw std::out_of_range("Index out of range");
+        }
+
+        size_t index = 0;
+        std::shared_ptr<Node<T>> current = first;
+
+        while(index < pos)
+        {
+            current = current -> next;
+            ++index;
+        }
+
+        return current -> value;
     }
 };

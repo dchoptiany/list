@@ -12,4 +12,5 @@
 <li>min - returns the smallest value in the list</li>
 <li>max - returns the biggest value in the list</li>
 <li>clear - deletes all elements of the list</li>
+<li>at - returns value on chosen position of the list</li>
 </ul>

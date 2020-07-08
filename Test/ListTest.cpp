@@ -83,3 +83,33 @@ TEST(ListTest, IntClearList10Value)
     intList.clear();
     ASSERT_TRUE(intList.empty());
 }
+
+TEST(ListTest, AtShouldReturn0)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_EQ(0, intList.at(0));
+}
+
+TEST(ListTest, AtShouldReturn3)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_EQ(3, intList.at(3));
+}
+
+TEST(ListTest, AtShouldThrowOutOfRange)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_THROW(intList.at(4), std::out_of_range);
+}
+
+TEST(ListTest, AtShouldThrowOutOfRangeEmptyList)
+{
+    List<int> intList;
+    ASSERT_THROW(intList.at(0), std::out_of_range);
+}
+
+TEST(ListTest, AtShouldReturnSecond)
+{
+    List<std::string> stringList {"First", "Second", "Third"};
+    ASSERT_EQ("Second", stringList.at(1));
+}
