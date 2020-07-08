@@ -2,6 +2,9 @@
 #include <stdexcept>
 #include "Node.hpp"
 
+template <class T> class List;
+template <class T> std::ostream& operator<<(std::ostream&, const List<T>&);
+
 template <class T>
 class List
 {
@@ -20,15 +23,16 @@ public:
     T at(size_t);
     T min();
     T max();
+    friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
 };
 
-template<class T>
+template <class T>
 List<T>::List()
 {
     first = nullptr;
 }
 
-template<class T>
+template <class T>
 List<T>::List(const std::initializer_list<T>& args)
 {
     first = std::make_shared<Node<T>>(Node<T>(*args.begin()));
@@ -40,7 +44,7 @@ List<T>::List(const std::initializer_list<T>& args)
         current = current -> next;
     }
 }
-template<class T>
+template <class T>
 void List<T>::push_front(const T _value)
 {
     auto newNode = std::make_shared<Node<T>>(Node<T>(_value));
@@ -53,7 +57,7 @@ void List<T>::push_front(const T _value)
     first = newNode;
 }
 
-template<class T>
+template <class T>
 void List<T>::push_back(const T _value)
 {
     auto newNode = std::make_shared<Node<T>>(Node<T>(_value));
@@ -74,7 +78,7 @@ void List<T>::push_back(const T _value)
     current -> next = newNode;
 }
 
-template<class T>
+template <class T>
 void List<T>::pop_front()
 {
     if(first == nullptr)
@@ -92,7 +96,7 @@ void List<T>::pop_front()
     first = second;
 }
 
-template<class T>
+template <class T>
 void List<T>::pop_back()
 {
     if(first == nullptr)
@@ -116,7 +120,7 @@ void List<T>::pop_back()
     current -> next = nullptr;
 }
 
-template<class T>
+template <class T>
 void List<T>::clear()
 {
     if(!empty())
@@ -125,7 +129,7 @@ void List<T>::clear()
     }
 }
 
-template<class T>
+template <class T>
 void List<T>::print()
 {
     std::shared_ptr<Node<T>> current = first;
@@ -137,13 +141,13 @@ void List<T>::print()
     }
 }
 
-template<class T>
+template <class T>
 bool List<T>::empty()
 {
     return first == nullptr;
 }
 
-template<class T>
+template <class T>
 size_t List<T>::size()
 {
     size_t counter = 0;
@@ -159,7 +163,7 @@ size_t List<T>::size()
     return counter;
 }
 
-template<class T>
+template <class T>
 T List<T>::at(const size_t pos)
 {
     if(pos >= size())
@@ -179,7 +183,7 @@ T List<T>::at(const size_t pos)
     return current -> value;
 }
 
-template<class T>
+template <class T>
 T List<T>::min()
 {
     if(!empty())
@@ -202,7 +206,7 @@ T List<T>::min()
     return 0;
 }
 
-template<class T>
+template <class T>
 T List<T>::max()
 {
     if(!empty())
@@ -223,4 +227,18 @@ T List<T>::max()
         return maximum;
     }
     return 0;
+}
+
+template <class T>
+std::ostream& operator<<(std::ostream &os, const List<T>& list)
+{
+    std::shared_ptr<Node<T>> current = list.first;
+
+    while(current != nullptr)
+    {
+        os << current -> value << " ";
+        current = current -> next;
+    }
+
+    return os;
 }
