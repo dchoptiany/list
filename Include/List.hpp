@@ -1,5 +1,4 @@
 #include <iostream>
-#include <optional>
 #include <stdexcept>
 #include "Node.hpp"
 
@@ -181,7 +180,7 @@ public:
         }
     }
 
-    std::optional<T> at(const size_t pos)
+    T at(const size_t pos)
     {
         if(pos >= size())
         {
