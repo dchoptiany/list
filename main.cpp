@@ -8,12 +8,13 @@ int main()
     newList.push_front(0);
     newList.pop_front();
     newList.pop_back();
+    std::cout << "newList.print(): ";
     newList.print();
-    std::cout << std::endl << "newList.at(3): " << newList.at(0) << std::endl;
-    std::cout << std::endl << "newList size: " << newList.size() << std::endl;
+    std::cout << std::endl << "newList.at(3): " << newList.at(3) << std::endl;
+    std::cout << "newList size: " << newList.size() << std::endl;
     std::cout << std::boolalpha << "newList empty: " << newList.empty() << std::endl;
     std::cout << "newList min: " << newList.min() << std::endl;
     std::cout << "newList max: " << newList.max() << std::endl;
-
+    std::cout << "std::cout << newList: " << newList << std::endl;
     newList.clear();
 }
