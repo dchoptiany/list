@@ -8,8 +8,10 @@ template <class T> std::ostream& operator<<(std::ostream&, const List<T>&);
 template <class T>
 class List
 {
-public:
+private:
     std::shared_ptr<Node<T>> first;
+
+public:
     List();
     List(const std::initializer_list<T>&);
     void push_front(T);
