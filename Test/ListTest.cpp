@@ -113,3 +113,9 @@ TEST(ListTest, AtShouldReturnSecond)
     List<std::string> stringList {"First", "Second", "Third"};
     ASSERT_EQ("Second", stringList.at(1));
 }
+
+TEST(ListTest, EraseShouldThrowOutOfRange)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_THROW(intList.erase(4), std::out_of_range);
+}
