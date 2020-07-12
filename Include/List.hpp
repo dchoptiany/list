@@ -24,6 +24,7 @@ public:
     void print();
     bool empty();
     size_t size();
+    T& begin();
     T& at(size_t);
     T min();
     T max();
@@ -232,6 +233,17 @@ size_t List<T>::size()
     }
 
     return counter;
+}
+
+template <class T>
+T& List<T>::begin()
+{
+    if(first == nullptr)
+    {
+        throw std::invalid_argument("List is empty");
+    }
+
+    return first -> value;
 }
 
 template <class T>

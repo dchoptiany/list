@@ -14,6 +14,7 @@ int main()
     std::cout << std::endl << "newList.at(3): " << newList.at(3) << std::endl;
     std::cout << "newList size: " << newList.size() << std::endl;
     std::cout << std::boolalpha << "newList empty: " << newList.empty() << std::endl;
+    std::cout << "newList begin: " << newList.begin() << std::endl;
     std::cout << "newList min: " << newList.min() << std::endl;
     std::cout << "newList max: " << newList.max() << std::endl;
     newList.insert(1, -1);

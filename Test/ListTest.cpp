@@ -27,6 +27,18 @@ TEST(ListTest, UnsignedListSizeShouldEqual3)
     ASSERT_EQ(3, unsignedList.size());
 }
 
+TEST(ListTest, BeginShouldReturn0)
+{
+    List<int> intList {0, 1, 2};
+    ASSERT_EQ(0, intList.begin());
+}
+
+TEST(ListTest, BeginShouldThrowInvalidArgument)
+{
+    List<int> intList;
+    ASSERT_THROW(intList.begin(), std::invalid_argument);
+}
+
 TEST(ListTest, IntListEmptyShouldEqualTrue)
 {
     List<int> intList;
