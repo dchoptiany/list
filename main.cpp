@@ -16,6 +16,7 @@ int main()
     std::cout << std::boolalpha << "newList empty: " << newList.empty() << std::endl;
     std::cout << "newList min: " << newList.min() << std::endl;
     std::cout << "newList max: " << newList.max() << std::endl;
+    newList.erase(1);
     std::cout << "std::cout << newList: " << newList << std::endl;
     newList.clear();
 }

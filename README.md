@@ -7,6 +7,7 @@
 <li>push_front - adds new element on the beginning of the list</li>
 <li>pop_front - deletes first element of the list</li>
 <li>pop_back - deletes last element of the list</li>
+<li>erase - deletes element from chosen position of the list</li>
 <li>print - prints all list's elements</li>
 <li>size - returns size of the list</li>
 <li>empty - returns true if list is empty and false otherwise</li>

@@ -16,6 +16,7 @@ public:
     void push_back(T);
     void pop_front();
     void pop_back();
+    void erase(size_t);
     void clear();
     void print();
     bool empty();
@@ -118,6 +119,38 @@ void List<T>::pop_back()
     }
 
     current -> next = nullptr;
+}
+
+template <class T>
+void List<T>::erase(const size_t pos)
+{
+    if(pos >= size())
+    {
+        throw std::out_of_range("Index out of range");
+    }
+
+    if(pos == 0)
+    {
+        pop_front();
+        return;
+    }
+
+    if(pos == size() - 1)
+    {
+        pop_back();
+        return;
+    }
+
+    size_t index = 0;
+    std::shared_ptr<Node<T>> current = first;
+
+    while(index < pos - 1)
+    {
+        current = current -> next;
+        ++index;
+    }
+
+    current -> next = current -> next -> next;
 }
 
 template <class T>
