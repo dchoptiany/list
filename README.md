@@ -12,6 +12,7 @@
 <li>print - prints all list's elements</li>
 <li>size - returns size of the list</li>
 <li>begin - returns value on first position of the list</li>
+<li>end - returns value on last position of the list</li>
 <li>empty - returns true if list is empty and false otherwise</li>
 <li>min - returns the smallest value in the list</li>
 <li>max - returns the biggest value in the list</li>

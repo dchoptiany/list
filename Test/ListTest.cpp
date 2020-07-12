@@ -39,6 +39,18 @@ TEST(ListTest, BeginShouldThrowInvalidArgument)
     ASSERT_THROW(intList.begin(), std::invalid_argument);
 }
 
+TEST(ListTest, EndShouldReturn2)
+{
+    List<int> intList {0, 1, 2};
+    ASSERT_EQ(2, intList.end());
+}
+
+TEST(ListTest, EndShouldThrowInvalidArgument)
+{
+    List<int> intList;
+    ASSERT_THROW(intList.end(), std::invalid_argument);
+}
+
 TEST(ListTest, IntListEmptyShouldEqualTrue)
 {
     List<int> intList;

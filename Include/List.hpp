@@ -25,6 +25,7 @@ public:
     bool empty();
     size_t size();
     T& begin();
+    T& end();
     T& at(size_t);
     T min();
     T max();
@@ -244,6 +245,24 @@ T& List<T>::begin()
     }
 
     return first -> value;
+}
+
+template <class T>
+T& List<T>::end()
+{
+    if(first == nullptr)
+    {
+        throw std::invalid_argument("List is empty");
+    }
+
+    std::shared_ptr<Node<T>> current = first;
+
+    while(current -> next != nullptr)
+    {
+        current = current -> next;
+    }
+
+    return current -> value;
 }
 
 template <class T>
