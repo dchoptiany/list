@@ -20,7 +20,7 @@ public:
     void print();
     bool empty();
     size_t size();
-    T at(size_t);
+    T& at(size_t);
     T min();
     T max();
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
@@ -164,7 +164,7 @@ size_t List<T>::size()
 }
 
 template <class T>
-T List<T>::at(const size_t pos)
+T& List<T>::at(const size_t pos)
 {
     if(pos >= size())
     {
