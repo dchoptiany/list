@@ -5,6 +5,7 @@
 <li>initializer list constructor</li>
 <li>push_back - adds new element on the end of the list</li>
 <li>push_front - adds new element on the beginning of the list</li>
+<li>insert - adds new element on chosen position of the list</li>
 <li>pop_front - deletes first element of the list</li>
 <li>pop_back - deletes last element of the list</li>
 <li>erase - deletes element from chosen position of the list</li>

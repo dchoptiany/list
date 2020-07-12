@@ -14,6 +14,7 @@ public:
     List(const std::initializer_list<T>&);
     void push_front(T);
     void push_back(T);
+    void insert(size_t, T);
     void pop_front();
     void pop_back();
     void erase(size_t);
@@ -76,6 +77,41 @@ void List<T>::push_back(const T _value)
         current = current -> next;
     }
 
+    current -> next = newNode;
+}
+
+template <class T>
+void List<T>::insert(const size_t pos, const T _value)
+{
+    if(pos > size())
+    {
+        throw std::out_of_range("Index out of range");
+    }
+
+    if(pos == 0)
+    {
+        push_front(_value);
+        return;
+    }
+
+    if(pos == size())
+    {
+        push_back(_value);
+        return;
+    }
+
+    auto newNode = std::make_shared<Node<T>>(Node<T>(_value));
+
+    size_t index = 0;
+    std::shared_ptr<Node<T>> current = first;
+
+    while(index < pos - 1)
+    {
+        current = current -> next;
+        ++index;
+    }
+
+    newNode -> next = current -> next;
     current -> next = newNode;
 }
 
