@@ -333,13 +333,13 @@ T List<T>::max()
 }
 
 template <class T>
-T &List<T>::operator[](const size_t pos)
+T& List<T>::operator[](const size_t pos)
 {
     return at(pos);
 }
 
 template <class T>
-std::ostream& operator<<(std::ostream &os, const List<T>& list)
+std::ostream& operator<<(std::ostream& os, const List<T>& list)
 {
     std::shared_ptr<Node<T>> current = list.first;
 
