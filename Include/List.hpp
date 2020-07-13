@@ -29,6 +29,7 @@ public:
     T& at(size_t);
     T min();
     T max();
+    T& operator[](size_t);
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
 };
 
@@ -329,6 +330,12 @@ T List<T>::max()
         return maximum;
     }
     return 0;
+}
+
+template <class T>
+T &List<T>::operator[](const size_t pos)
+{
+    return at(pos);
 }
 
 template <class T>

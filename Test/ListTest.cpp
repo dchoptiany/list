@@ -149,3 +149,21 @@ TEST(ListTest, EraseShouldThrowOutOfRange)
     List<int> intList {0, 1, 2, 3};
     ASSERT_THROW(intList.erase(4), std::out_of_range);
 }
+
+TEST(ListTest, AccessOperatorShouldReturn0)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_EQ(0, intList[0]);
+}
+
+TEST(ListTest, AccessOperatorShouldReturn3)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_EQ(3, intList[3]);
+}
+
+TEST(ListTest, AccessOperatorShouldThrowOutOfRange)
+{
+    List<int> intList {0, 1, 2, 3};
+    ASSERT_THROW(intList[4], std::out_of_range);
+}
