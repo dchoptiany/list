@@ -42,13 +42,13 @@ TEST(ListTest, BeginShouldThrowInvalidArgument)
 TEST(ListTest, EndShouldReturn2)
 {
     List<int> intList {0, 1, 2};
-    ASSERT_EQ(2, intList.end());
+    ASSERT_EQ(2, intList.back());
 }
 
 TEST(ListTest, EndShouldThrowInvalidArgument)
 {
     List<int> intList;
-    ASSERT_THROW(intList.end(), std::invalid_argument);
+    ASSERT_THROW(intList.back(), std::invalid_argument);
 }
 
 TEST(ListTest, IntListEmptyShouldEqualTrue)

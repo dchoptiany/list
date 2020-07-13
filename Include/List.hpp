@@ -25,7 +25,7 @@ public:
     bool empty();
     size_t size();
     T& front();
-    T& end();
+    T& back();
     T& at(size_t);
     T min();
     T max();
@@ -248,7 +248,7 @@ T& List<T>::front()
 }
 
 template <class T>
-T& List<T>::end()
+T& List<T>::back()
 {
     if(first == nullptr)
     {
