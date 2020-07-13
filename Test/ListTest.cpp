@@ -30,13 +30,13 @@ TEST(ListTest, UnsignedListSizeShouldEqual3)
 TEST(ListTest, BeginShouldReturn0)
 {
     List<int> intList {0, 1, 2};
-    ASSERT_EQ(0, intList.begin());
+    ASSERT_EQ(0, intList.front());
 }
 
 TEST(ListTest, BeginShouldThrowInvalidArgument)
 {
     List<int> intList;
-    ASSERT_THROW(intList.begin(), std::invalid_argument);
+    ASSERT_THROW(intList.front(), std::invalid_argument);
 }
 
 TEST(ListTest, EndShouldReturn2)
