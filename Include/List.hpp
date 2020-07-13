@@ -29,6 +29,7 @@ public:
     T min();
     T max();
     void merge(List<T>&);
+    void remove(T);
     T& operator[](size_t);
     bool operator==(List<T>&);
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
@@ -331,6 +332,24 @@ T List<T>::max()
         return maximum;
     }
     return 0;
+}
+
+template <class T>
+void List<T>::remove(const T _value)
+{
+    size_t index = 0;
+
+    while(index < size())
+    {
+        if(at(index) == _value)
+        {
+            erase(index);
+        }
+        else
+        {
+            ++index;
+        }
+    }
 }
 
 template <class T>

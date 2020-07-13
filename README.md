@@ -18,6 +18,7 @@
 <li>max - returns the biggest value in the list</li>
 <li>clear - deletes all elements of the list</li>
 <li>at - returns reference to value on chosen position of the list</li>
+<li>remove - deletes all occurrences of chosen value in the list</li>
 <li>merge - adds all elements of list to the back of another</li>
 <li>operator[] - returns reference to value on chosen position of the list</li>
 <li>operator== - returns true if two lists are equal and false otherwise</li>
