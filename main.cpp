@@ -4,7 +4,7 @@
 int main()
 {
     List<int> newList {1, 2, 3, 4, 5};
-    List<int> secondList;
+    List<int> secondList {6, 7, 8, 9};
     newList.push_back(6);
     newList.push_front(0);
     newList.pop_front();
@@ -22,8 +22,8 @@ int main()
     std::cout << "newList max: " << newList.max() << std::endl;
     newList.insert(1, -1);
     newList.erase(1);
+    newList.merge(secondList);
     std::cout << "std::cout << newList: " << newList << std::endl;
     std::cout << "newList == secondList: " << (newList == secondList) << std::endl;
     newList.clear();
-    std::cout << "newList == secondList: " << (newList == secondList) << std::endl;
 }

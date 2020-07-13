@@ -28,6 +28,7 @@ public:
     T& at(size_t);
     T min();
     T max();
+    void merge(List<T>&);
     T& operator[](size_t);
     bool operator==(List<T>&);
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
@@ -330,6 +331,15 @@ T List<T>::max()
         return maximum;
     }
     return 0;
+}
+
+template <class T>
+void List<T>::merge(List<T>& list)
+{
+    for(size_t i = 0; i < list.size(); i++)
+    {
+        push_back(list.at(i));
+    }
 }
 
 template <class T>
