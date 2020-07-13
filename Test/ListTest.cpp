@@ -167,3 +167,17 @@ TEST(ListTest, AccessOperatorShouldThrowOutOfRange)
     List<int> intList {0, 1, 2, 3};
     ASSERT_THROW(intList[4], std::out_of_range);
 }
+
+TEST(ListTest, EqualityOperatorShouldReturnTrue)
+{
+    List<int> first {0, 1, 2, 3};
+    List<int> second {0, 1, 2, 3};
+    ASSERT_TRUE(first == second);
+}
+
+TEST(ListTest, EqualityOperatorShouldReturnFalse)
+{
+    List<int> first {0, 1, 2, 3, 4};
+    List<int> second {0, 1, 2, 3};
+    ASSERT_FALSE(first == second);
+}

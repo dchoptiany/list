@@ -8,10 +8,9 @@ template <class T> std::ostream& operator<<(std::ostream&, const List<T>&);
 template <class T>
 class List
 {
-private:
+public:
     std::shared_ptr<Node<T>> first;
 
-public:
     List();
     List(const std::initializer_list<T>&);
     void push_front(T);
@@ -30,6 +29,7 @@ public:
     T min();
     T max();
     T& operator[](size_t);
+    bool operator==(List<T>&);
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
 };
 
@@ -336,6 +336,24 @@ template <class T>
 T& List<T>::operator[](const size_t pos)
 {
     return at(pos);
+}
+template <class T>
+bool List<T>::operator==(List<T>& rhs)
+{
+    if(size() != rhs.size())
+    {
+        return false;
+    }
+
+    for(size_t i = 0; i < size(); i++)
+    {
+        if(this -> at(i) != rhs.at(i))
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 template <class T>

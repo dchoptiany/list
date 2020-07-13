@@ -19,5 +19,6 @@
 <li>clear - deletes all elements of the list</li>
 <li>at - returns reference to value on chosen position of the list</li>
 <li>operator[] - returns reference to value on chosen position of the list</li>
+<li>operator== - returns true if two lists are equal and false otherwise</li>
 <li>operator<< overloading</li>
 </ul>
