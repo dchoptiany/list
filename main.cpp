@@ -24,5 +24,7 @@ int main()
     secondList.merge(myList);
     secondList[2] = 9;
     std::cout << (myList == secondList) << std::endl;
+    secondList = {1, 2, 3};
+    myList = secondList;
     std::cout << secondList << std::endl;
 }

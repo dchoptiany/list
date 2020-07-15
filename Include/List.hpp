@@ -32,6 +32,8 @@ public:
     void remove(T);
     T& operator[](size_t);
     bool operator==(List<T>&);
+    List<T>& operator=(const List<T>&);
+    List<T>& operator=(const std::initializer_list<T>&);
     friend std::ostream& operator<< <T>(std::ostream&, const List<T>&);
 };
 
@@ -383,6 +385,38 @@ bool List<T>::operator==(List<T>& rhs)
     }
 
     return true;
+}
+
+template <class T>
+List<T>& List<T>::operator=(const List<T>& rhs)
+{
+    if(this != &rhs)
+    {
+        clear();
+
+        std::shared_ptr<Node<T>> current = rhs.first;
+
+        while(current != nullptr)
+        {
+            push_back(current -> value);
+            current = current -> next;
+        }
+    }
+
+    return *this;
+}
+
+template <class T>
+List<T>& List<T>::operator=(const std::initializer_list<T>& args)
+{
+    clear();
+
+    for(auto it = args.begin(); it != args.end(); ++it)
+    {
+        push_back(*it);
+    }
+
+    return *this;
 }
 
 template <class T>

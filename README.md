@@ -22,5 +22,6 @@
 <li>merge - adds all elements of list to the back of another</li>
 <li>operator[] - returns reference to value on chosen position of the list</li>
 <li>operator== - returns true if two lists are equal and false otherwise</li>
+<li>operator= - assigns right hand side list's values to left hand side one (overloaded for initializer list)</li>
 <li>operator<< overloading</li>
 </ul>
