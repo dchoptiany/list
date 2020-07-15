@@ -3,11 +3,11 @@
 <h3>Features:</h3>
 <ul>
 <li>initializer list constructor</li>
-<li>push_front - adds new element on the beginning of the list</li>
-<li>push_back - adds new element on the end of the list</li>
+<li>push_front - adds new element on the front of the list</li>
+<li>push_back - adds new element on the back of the list</li>
 <li>insert - adds new element on chosen position of the list</li>
-<li>pop_front - deletes first element of the list</li>
-<li>pop_back - deletes last element of the list</li>
+<li>pop_front - deletes the first element of the list</li>
+<li>pop_back - deletes the last element of the list</li>
 <li>erase - deletes element from chosen position of the list</li>
 <li>print - prints all list's elements</li>
 <li>size - returns size of the list</li>
