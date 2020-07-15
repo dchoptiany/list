@@ -3,28 +3,26 @@
 
 int main()
 {
-    List<int> newList {1, 2, 3, 4, 5};
-    List<int> secondList {6, 7, 8, 8, 9};
-    newList.push_back(6);
-    newList.push_front(0);
-    newList.pop_front();
-    newList.pop_back();
-    std::cout << "newList.print(): ";
-    newList.print();
-    newList.at(3) = 0;
-    std::cout << std::endl << "newList.at(3): " << newList.at(3) << std::endl;
-    std::cout << "newList[4]: " << newList[4] << std::endl;
-    std::cout << "newList size: " << newList.size() << std::endl;
-    std::cout << std::boolalpha << "newList empty: " << newList.empty() << std::endl;
-    std::cout << "newList begin: " << newList.front() << std::endl;
-    std::cout << "newList end: " << newList.back() << std::endl;
-    std::cout << "newList min: " << newList.min() << std::endl;
-    std::cout << "newList max: " << newList.max() << std::endl;
-    newList.insert(1, -1);
-    newList.erase(1);
-    newList.merge(secondList);
-    newList.remove(8);
-    std::cout << "std::cout << newList: " << newList << std::endl;
-    std::cout << "newList == secondList: " << (newList == secondList) << std::endl;
-    newList.clear();
+    List<int> myList {1, 2, 3, 5};
+    List<int> secondList = {6, 7, 8};
+    myList.push_front(0);
+    secondList.push_back(9);
+    myList.insert(4, 4);
+    myList.pop_front();
+    secondList.pop_back();
+    myList.erase(1);
+    myList.print();
+    std::cout << secondList.size() << std::endl;
+    myList.front() = 4;
+    std::cout << secondList.back() << std::endl;
+    std::cout << myList.empty() << std::endl;
+    std::cout << myList.min() << std::endl;
+    std::cout << secondList.max() << std::endl;
+    secondList.clear();
+    myList.at(3) = 8;
+    myList.remove(8);
+    secondList.merge(myList);
+    secondList[2] = 9;
+    std::cout << (myList == secondList) << std::endl;
+    std::cout << secondList << std::endl;
 }
