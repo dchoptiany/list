@@ -29,6 +29,7 @@ public:
     T min();
     T max();
     void merge(List<T>&);
+    void assign(size_t, T);
     void remove(T);
     T& operator[](size_t);
     bool operator==(List<T>&);
@@ -360,6 +361,17 @@ void List<T>::merge(List<T>& list)
     for(size_t i = 0; i < list.size(); i++)
     {
         push_back(list.at(i));
+    }
+}
+
+template <class T>
+void List<T>::assign(const size_t count, const T value)
+{
+    clear();
+
+    for(size_t i = 0; i < count; i++)
+    {
+        push_back(value);
     }
 }
 
