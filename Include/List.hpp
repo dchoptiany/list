@@ -28,9 +28,10 @@ public:
     T& at(size_t);
     T min();
     T max();
+    void remove(T);
     void merge(List<T>&);
     void assign(size_t, T);
-    void remove(T);
+    void swap(List<T>&);
     T& operator[](size_t);
     bool operator==(List<T>&);
     List<T>& operator=(const List<T>&);
@@ -373,6 +374,14 @@ void List<T>::assign(const size_t count, const T value)
     {
         push_back(value);
     }
+}
+
+template <class T>
+void List<T>::swap(List<T>& rhs)
+{
+    std::shared_ptr<Node<T>> temp = rhs.first;
+    rhs.first = first;
+    first = temp;
 }
 
 template <class T>

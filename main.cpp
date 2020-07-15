@@ -23,6 +23,7 @@ int main()
     myList.remove(8);
     secondList.merge(myList);
     myList.assign(10, 0);
+    myList.swap(secondList);
     secondList[2] = 9;
     std::cout << (myList == secondList) << std::endl;
     secondList = {1, 2, 3};
