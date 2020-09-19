@@ -1,3 +1,6 @@
+#ifndef LIST
+#define LIST
+
 #include <iostream>
 #include <stdexcept>
 #include "Node.hpp"
@@ -453,3 +456,5 @@ std::ostream& operator<<(std::ostream& os, const List<T>& list)
 
     return os;
 }
+
+#endif LIST
