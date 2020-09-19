@@ -16,6 +16,7 @@ public:
 
     List();
     List(const std::initializer_list<T>&);
+    List(const List<T>&);
     void push_front(T);
     void push_back(T);
     void insert(size_t, T);
@@ -60,6 +61,19 @@ List<T>::List(const std::initializer_list<T>& args)
         current = current -> next;
     }
 }
+
+template <class T>
+List<T>::List(const List<T>& list)
+{
+    std::shared_ptr<Node<T>> current = list.first;
+
+    while(current != nullptr)
+    {
+        push_back(current->value);
+        current = current->next;
+    }
+}
+
 template <class T>
 void List<T>::push_front(const T _value)
 {

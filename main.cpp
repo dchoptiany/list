@@ -5,14 +5,15 @@ int main()
 {
     List<int> myList {1, 2, 3, 5};
     List<int> secondList = {6, 7, 8};
+    List<int> thirdList = secondList;
     myList.push_front(0);
     secondList.push_back(9);
     myList.insert(4, 4);
     myList.pop_front();
     secondList.pop_back();
     myList.erase(1);
-    myList.print();
-    std::cout << secondList.size() << std::endl;
+    thirdList.print();
+    std::cout << std::endl << secondList.size() << std::endl;
     myList.front() = 4;
     std::cout << secondList.back() << std::endl;
     std::cout << myList.empty() << std::endl;

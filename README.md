@@ -3,6 +3,7 @@
 <h3>Features:</h3>
 <ul>
 <li>initializer list constructor</li>
+<li>copy constructor</li>
 <li>push_front - adds new element on the front of the list</li>
 <li>push_back - adds new element on the back of the list</li>
 <li>insert - adds new element on chosen position of the list</li>
