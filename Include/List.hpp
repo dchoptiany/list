@@ -136,7 +136,7 @@ void List<T>::pop_front()
 
     if(first -> next == nullptr)
     {
-        first == nullptr;
+        first = nullptr;
         return;
     }
 
@@ -154,7 +154,7 @@ void List<T>::pop_back()
 
     if(first -> next == nullptr)
     {
-        first == nullptr;
+        first = nullptr;
         return;
     }
 
