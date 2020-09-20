@@ -1,4 +1,6 @@
 # <h1>Singly linked list C++</h1>
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/dchoptiany/list.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dchoptiany/list/alerts/) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/dchoptiany/list.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dchoptiany/list/context:cpp)
+
 
 <h3>Features:</h3>
 <ul>
